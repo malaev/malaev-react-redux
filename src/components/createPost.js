@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 import {createPost} from "../actions/actionPost";
-import { store } from '../index'
-import { Link } from 'react-router-dom'
+import { store } from '../index';
+import { Link } from 'react-router-dom';
 import {Header} from "./header";
 import {App} from "../containers/App";
+import {ImageUpload} from "../containers/uploader";
 
 export class CreatePost extends React.Component {
     constructor(props) {
@@ -43,6 +44,7 @@ export class CreatePost extends React.Component {
                     value={this.state.text} onChange={this.onChangeText.bind(this)}></textarea>
                 </div>
                 <button onClick={this.onClick.bind(this)}><Link to='/'>Опубликовать</Link></button>
+                <ImageUpload/>
             </div>
         )
     }
